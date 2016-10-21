@@ -22,6 +22,40 @@ Praise be to God, the Cherisher and Sustainer of the world;
 Most Gracious, Most Merciful;
 ```
 
+**Inverted Index Format:**
+```
+term document_frequency -> [ document_numbers ];
+
+Example:
+sustainer 5 -> 2 864 1104 1486 1510 1839 
+master 3 -> 4 1869 2100 4238
+assurance 8 -> 11 276 457 1094 1274 3303 3383 3615 4661 
+....
+```
+
+**Positional Index Format:**
+```
+<term, document_frequency
+[ document_number ] -> [ document_position ]
+...
+>
+
+Example:
+<coral, 2
+D5087: 7 
+D5123: 5 
+>
+<flame, 3
+D5100: 9 
+D6402: 6 
+D6404: 8 
+>
+<defence, 1
+D5100: 18 
+>
+...
+```
+
 ### Platform 
 
 This project is created on Java Programming Language on Netbeans IDE. Its a simple Java Application Program that doesn't require anything extra. 
