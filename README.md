@@ -8,7 +8,7 @@ Information retrieval (IR) is the activity of obtaining information resources re
 
 ### About this Model
 
-The boolean model takes a collection of documents ***Quran Translation.txt*** (In this Project) and converts it into **Inverted Index** and **Positional Index** for Query Processing.
+The boolean model takes a collection of documents ***Quran Translation.txt*** and other files named **1-15** (In this Project) and converts it into **Inverted Index** and **Positional Index** for Query Processing.
 
 Each verse of the Quran [x:y] is treated as a document. 
 
@@ -63,11 +63,10 @@ This project is created on Java Programming Language on Netbeans IDE. Its a simp
 ### How To Run/Install
 
 - Download the Files
-- Paste then in ***Documents/NetBeansProject/..*** or any directory
+- Paste then in any directory
 - Run Netbeans
 - Click File>Open Project
 - Select the Downloaded Project
-- Project will be imported by now
 - Click Run to view Results
 
 ### Objectives / Project Flow 
@@ -76,8 +75,8 @@ This project is created on Java Programming Language on Netbeans IDE. Its a simp
 
 - [x] Construct Inverted Index
 - [x] Construct Positional Index
-- [ ] Remove Stopwords
-- [ ] Boolean Query Processing (t EXP k)
+- [x] Remove Stopwords
+- [x] Boolean Query Processing (t EXP k)
 - [ ] Proximity Queries (t EXP k /y) : where y is the positional difference between t and k term
-- [ ] Phrase Queries (t where t consists of t1 t2 t3 ... tn terms)
-- [ ] Designing an Interface on jSwing
+- [x] Phrase Queries (t where t consists of t1 t2 t3 ... tn terms)
+- [x] Designing an Interface on jSwing
