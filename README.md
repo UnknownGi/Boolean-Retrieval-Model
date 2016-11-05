@@ -41,17 +41,17 @@ assurance 8 -> 11 276 457 1094 1274 3303 3383 3615 4661
 >
 
 Example:
-<coral, 2
-D5087: 7 
-D5123: 5 
+<coral, 5
+D5087: 7 19 22
+D5123: 5 11
 >
-<flame, 3
+<flame, 5
 D5100: 9 
-D6402: 6 
+D6402: 6 12 13
 D6404: 8 
 >
-<defence, 1
-D5100: 18 
+<defence, 3
+D5100: 18 21 29 
 >
 ...
 ```
@@ -77,6 +77,41 @@ This project is created on Java Programming Language on Netbeans IDE. Its a simp
 - [x] Construct Positional Index
 - [x] Remove Stopwords
 - [x] Boolean Query Processing (t EXP k)
-- [ ] Proximity Queries (t EXP k /y) : where y is the positional difference between t and k term
+- [x] Proximity Queries (t EXP k /y) : where y is the positional difference between t and k term
 - [x] Phrase Queries (t where t consists of t1 t2 t3 ... tn terms)
 - [x] Designing an Interface on jSwing
+
+### Screenshots
+
+- When Project is Built and Run
+
+![Build](http://i.imgur.com/yDPzdxS.png)
+
+- Project Interface
+
+![Interface](http://i.imgur.com/h5XkC9f.png)
+
+- Result Set Size
+
+![ResultSetSize](http://i.imgur.com/C6zPfhz.png)
+
+- Document Result as a Dropdown Combo Box
+
+![QueryResult](http://i.imgur.com/lKZEGAf.png)
+
+- Highlighted Document Content to Confirm From Query
+
+![Highlighter](http://i.imgur.com/RLBfXQf.png)
+
+
+### Contact
+
+For any query contact @
+- gmail: k132089@nu.edu.pk
+- facebook: facebook.com/fuNkyBRO1
+
+### Further Work
+
+This is as far as a I go for this project. I see no room for improvement. 
+
+Clone this project for improving it from your side.
