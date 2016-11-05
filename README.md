@@ -73,33 +73,33 @@ This project is created on Java Programming Language on Netbeans IDE. Its a simp
 
 (EXP) Stands for AND/OR/NOT.
 
-- [x] Construct Inverted Index
-- [x] Construct Positional Index
-- [x] Remove Stopwords
-- [x] Boolean Query Processing (t EXP k)
-- [x] Proximity Queries (t EXP k /y) : where y is the positional difference between t and k term
-- [x] Phrase Queries (t where t consists of t1 t2 t3 ... tn terms)
-- [x] Designing an Interface on jSwing
+- [x] Construct ***Inverted Index***
+- [x] Construct ***Positional Index***
+- [x] Remove ***Stopwords***
+- [x] ***Boolean Query Processing*** (t EXP k)
+- [x] ***Proximity Queries Processing*** (t EXP k /y) : where y is the positional difference between t and k term
+- [x] ***Phrase Queries Processing*** (t where t consists of t1 t2 t3 ... tn terms)
+- [x] Designing an ***Interface on jSwing***
 
 ### Screenshots
 
-- When Project is Built and Run
+- ***When Project is Built and Run***
 
 ![Build](http://i.imgur.com/yDPzdxS.png)
 
-- Project Interface
+- ***Project Interface***
 
 ![Interface](http://i.imgur.com/h5XkC9f.png)
 
-- Result Set Size
+- ***Result Set Size***
 
 ![ResultSetSize](http://i.imgur.com/C6zPfhz.png)
 
-- Document Result as a Dropdown Combo Box
+- ***Document Result as a Dropdown Combo Box***
 
 ![QueryResult](http://i.imgur.com/lKZEGAf.png)
 
-- Highlighted Document Content to Confirm From Query
+- ***Highlighted Document Content to Confirm From Query***
 
 ![Highlighter](http://i.imgur.com/RLBfXQf.png)
 
@@ -107,8 +107,8 @@ This project is created on Java Programming Language on Netbeans IDE. Its a simp
 ### Contact
 
 For any query contact @
-- gmail: k132089@nu.edu.pk
-- facebook: facebook.com/fuNkyBRO1
+- gmail: ***k132089@nu.edu.pk***
+- facebook: ***facebook.com/fuNkyBRO1***
 
 ### Further Work
 
