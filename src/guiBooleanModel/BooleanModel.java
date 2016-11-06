@@ -51,6 +51,8 @@ public class BooleanModel {
             }
         }
         
+        if ( !str.isEmpty() ) collection.add(str);
+        
         return collection;
     }
     

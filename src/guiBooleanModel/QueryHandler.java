@@ -22,7 +22,7 @@ public class QueryHandler {
             }
             else list = ii.dictionary.get(array[0]);
             
-            for ( int i=2; i<array.length; i+=2 ) {
+            for ( int i=start; i<array.length; i+=2 ) {
                 if ( "AND".equals(array[i-1]) ) {
                     if ( !("NOT".equals(array[i])) ) {
                         if ( ii.dictionary.containsKey(array[i]) ) list.retainAll(ii.dictionary.get(array[i]));
@@ -59,41 +59,52 @@ public class QueryHandler {
     public ArrayList<Integer> processProximity ( String query, PositionalIndex pi, ArrayList<String> collection ) {
         String[] array = query.split(" ");
         
-        pTerm list = new pTerm();
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        
         if ( array.length > 0 ) {
-            int start = 2;
-            
-            if ( "NOT".equals(array[0]) ) {
-                list = pi.dictionary.get(array[1]);
-                ArrayList<Integer> temp = new ArrayList<Integer>();
-                for ( int i=1; i<collection.size(); ++i ) {
-                    if ( !list.documentNumber.contains(i) ) temp.add(i);
-                }
+            String regex = "(.*)" + array[0];
+            for ( int i=2; i<array.length; i+=2 ) {
+                String positional = array[i+1];
+                positional = positional.substring(1);
+
+                for ( int j=1; j<Integer.parseInt(positional); ++j ) regex += "\\s(\\S+)";
                 
-                list.documentNumber = temp;
-                start = 3;
+                regex += "\\s";
+                regex += array[i];
+                regex += "(.*)";
+                
+                ++i;
             }
-            else list = pi.dictionary.get(array[0]);
             
-            for ( int i=start; i<array.length; i+=2 ) {
-                if ( "AND".equals(array[i-1]) ) {
-                    if ( !("NOT".equals(array[i])) ) {
-                        if ( pi.dictionary.containsKey(array[i]) ) list.documentNumber.retainAll(pi.dictionary.get(array[i]).documentNumber);
-                        else return (new ArrayList<Integer>());
-                    } else {
-                        pTerm tmp = new pTerm();
-                        for ( int j=0; j<collection.size(); ++j ) tmp.documentNumber.add(j+1);
-                        if ( pi.dictionary.containsKey(array[i+1]) ) {
-                            tmp.documentNumber.removeAll(pi.dictionary.get(array[i+1]).documentNumber);
-                            list.documentNumber.retainAll(tmp.documentNumber);
-                            i = i+1;
-                        }
-                    }
-                } 
+            for ( int i=0; i<collection.size(); ++i ) {
+                if ( collection.get(i).matches(regex) ) result.add(i+1);
             }
+            
+            solve(collection, result, regex, 0);
         }
         
+        return result;
+    }
+    
+    private void solve ( ArrayList<String> collection, ArrayList<Integer> result, String regex, int iterator ) {
+        String newRegex = regex;
+        int index = newRegex.indexOf("(\\S+)");
         
+        if ( index != -1 ) {
+            String afterChange = newRegex.substring(0, index)+newRegex.substring(index+5, newRegex.length());
+            
+            if ( afterChange.contains("\\s\\s") ) {
+                int in = afterChange.indexOf("\\s\\s");
+                
+                afterChange = afterChange.substring(0, in)+afterChange.substring(in+2, afterChange.length());
+            }
+            
+            for ( int i=0; i<collection.size(); ++i ) {
+                if ( collection.get(i).matches(afterChange) ) result.add(i+1);
+            }
+            
+            solve(collection, result, afterChange, iterator+1);
+        }
     }
     
     public ArrayList<Integer> processPhrase ( String query, InvertedIndex ii, ArrayList<String> collection ) {
